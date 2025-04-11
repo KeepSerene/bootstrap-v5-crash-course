@@ -1,0 +1,15 @@
+// Custom theme colors
+$primary: #c29938;
+$light: #74736f;
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+$custom-theme-colors: (
+  "alt-muted": #72697c,
+  "alt-purple": #6927af,
+);
+
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
