@@ -29,54 +29,22 @@ const clearErrors = () => {
   });
 };
 
-const contactFormEl = document.querySelector("[data-contact-form]");
+const formEls = document.querySelectorAll(".needs-validation");
 
-function validateContactForm(event) {
-  event.preventDefault();
+function validateContactForm() {
+  Array.prototype.slice.call(formEls).forEach((formEl) => {
+    formEl.addEventListener("submit", (event) => {
+      // If the form isn't valid, prevent submission
+      if (!formEl.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      } else {
+        alert("Form submitted successfully!");
+      }
 
-  // Clear previous errors
-  clearErrors();
-
-  const emailFieldEl = contactFormEl.querySelector("#email");
-  const nameFieldEl = contactFormEl.querySelector("#name");
-  const queryFieldEl = contactFormEl.querySelector("#query");
-
-  const emailFeedbackEl = contactFormEl.querySelector("[data-email-feedback]");
-  const nameFeedbackEl = contactFormEl.querySelector("[data-name-feedback]");
-  const queryFeedbackEl = contactFormEl.querySelector("[data-query-feedback]");
-
-  let isValid = true;
-
-  if (!emailFieldEl.value.trim()) {
-    isValid = false;
-    showErrMsg(emailFieldEl, emailFeedbackEl, "Email address is required");
-  }
-
-  if (!nameFieldEl.value.trim()) {
-    isValid = false;
-    showErrMsg(nameFieldEl, nameFeedbackEl, "Name is required!");
-  } else if (nameFieldEl.value.trim().length < 3) {
-    isValid = false;
-    showErrMsg(
-      nameFieldEl,
-      nameFeedbackEl,
-      "Name must be at least 3 characters long!"
-    );
-  }
-
-  if (!queryFieldEl.value.trim()) {
-    isValid = false;
-    showErrMsg(queryFieldEl, queryFeedbackEl, "Please enter your query!");
-  }
-
-  // Submit and reset form
-  if (isValid) {
-    console.log("Email:", emailFieldEl.value.trim());
-    console.log("Name:", nameFieldEl.value.trim());
-    console.log("Query:", queryFieldEl.value.trim());
-    alert("Form submitted successfully!");
-    contactFormEl.reset();
-  }
+      formEl.classList.add("was-validated");
+    });
+  });
 }
 
 const newsletterSubBtn = document.querySelector("[data-newsletter-sub-btn]");
@@ -106,8 +74,14 @@ function validateNewsletterSub() {
   }
 }
 
+function renderCopyrightYear() {
+  const copyrightYearSpanEl = document.querySelector("[data-copyright-year]");
+  copyrightYearSpanEl.innerText = `${new Date().getFullYear()}`;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initTooltips();
-  contactFormEl.addEventListener("submit", validateContactForm);
+  validateContactForm();
   newsletterSubBtn.addEventListener("click", validateNewsletterSub);
+  renderCopyrightYear();
 });

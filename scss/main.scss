@@ -1,12 +1,26 @@
-// Font family import
+// Font family
 @import url("https://fonts.googleapis.com/css2?family=Asul:wght@400;700&display=swap");
 
+$ff: "Asul", serif !important;
+
 // Custom bootstrap theme colors
-$primary: #6246ea; // Vibrant purple
-$secondary: #d1d1e9; // Light lavender
-$dark: #121212; // Dark gray (near black)
-$light: #e2e2e2; // Off-white
-$danger: #e45b78; // Modified danger color
+// Material Design Color Palette
+$primary: #009688; // For main CTAs
+$primary-variant: #00796b; // For gradients
+$secondary: rgba(63, 81, 181, 0.16); // Subtle accents
+$secondary-solid: #3f51b5; // Solid version for text
+$success: #4caf50;
+$danger: #f44336;
+$background: #121212;
+$surface: #1e1e1e; // Cards, Modals
+$surface-variant: #2d2d2d; // Accordions, dropdowns
+
+// Text Colors
+$on-primary: #ffffff;
+$on-secondary: #000000;
+$on-background: rgba(255, 255, 255, 0.87);
+$on-surface: rgba(255, 255, 255, 0.6);
+$on-surface-muted: rgba(255, 255, 255, 0.38); // Disabled/placeholder text
 
 // Bootstrap theme colors must be modified before imports
 // as both functions and variables imports use these values
@@ -15,18 +29,19 @@ $danger: #e45b78; // Modified danger color
 @import "../node_modules/bootstrap/scss/variables";
 
 $custom-theme-colors: (
-  // Dark gray
-  "primary-bg": #2b2b2b,
-  // Darker gray
-  "secondary-bg": #1a1a1a,
-  // Light gray
-  "primary-txt": #f5f5f5,
-  // Medium gray
-  "secondary-txt": #b3b3b3,
-  // Subtle muted color
-  "alt-muted": #3f3f47,
-  // Brighter accent purple
-  "alt-purple": #9b5de5
+  "primary": $primary,
+  "primary-variant": $primary-variant,
+  "secondary": $secondary,
+  "success": $success,
+  "danger": $danger,
+  "background": $background,
+  "surface": $surface,
+  "surface-variant": $surface-variant,
+  "on-primary": $on-primary,
+  "on-secondary": $on-secondary,
+  "on-background": $on-background,
+  "on-surface": $on-surface,
+  "on-surface-muted": $on-surface-muted,
 );
 
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);
@@ -59,19 +74,20 @@ svg {
 
 // Base styles
 body {
-  font-family: "Asul", serif !important;
-  color: map-get($custom-theme-colors, "primary-txt");
-  caret-color: map-get($custom-theme-colors, "alt-purple");
+  background-color: $background;
+  color: $on-background;
+  font-family: $ff;
+  caret-color: map-get($custom-theme-colors, "primary");
 
   // For firefox
   scrollbar-width: thin;
-  scrollbar-color: $primary map-get($custom-theme-colors, "primary-bg");
+  scrollbar-color: $primary map-get($custom-theme-colors, "dark");
 }
 
 // Selection styles
 ::selection {
   background-color: $primary;
-  color: map-get($custom-theme-colors, "primary-txt");
+  color: map-get($custom-theme-colors, "on-primary");
 }
 
 // Scrollbar styles for webkit browsers
@@ -80,7 +96,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: map-get($custom-theme-colors, "primary-bg");
+  background-color: map-get($custom-theme-colors, "dark");
 }
 
 ::-webkit-scrollbar-thumb {
@@ -88,16 +104,15 @@ body {
   border-radius: 2px;
 }
 
-// Utils
+// Utilities
 header {
-  background-color: hsla(267, 72%, 63%, 0.1);
+  background-color: rgba($primary, 0.08);
   backdrop-filter: blur(30px);
 }
 
-// Header nav link styles
 [data-nav-link] {
-  --bs-nav-link-color: #{map-get($custom-theme-colors, "primary-txt")};
-  --bs-nav-link-hover-color: #{map-get($custom-theme-colors, "alt-purple")};
+  --bs-nav-link-color: #{map-get($custom-theme-colors, "on-background")};
+  --bs-nav-link-hover-color: #{$secondary};
 
   color: var(--bs-nav-link-color);
   transition: color 250ms ease-in-out;
@@ -107,15 +122,116 @@ header {
   }
 }
 
+.bg-primary-gradient {
+  background: linear-gradient(135deg, $primary 0%, $primary-variant 100%);
+}
+
+.footer-gradient {
+  background: linear-gradient(45deg, $primary-variant 0%, $primary 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(45deg, $primary 30%, $secondary-solid 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.card {
+  background-color: $surface-variant;
+  border: 1px solid rgba($on-background, 0.12);
+
+  .card-header {
+    background: linear-gradient(90deg, $primary 0%, rgba($primary, 0.8) 100%);
+    color: $on-primary;
+    border-bottom: none;
+  }
+}
+
+.btn-secondary {
+  background-color: $secondary;
+  border-color: rgba($secondary-solid, 0.3);
+  color: $secondary-solid;
+
+  &:where(:hover, :focus-visible) {
+    background-color: rgba($secondary-solid, 0.1);
+  }
+}
+
+.btn-secondary {
+  background-color: $secondary;
+  color: $on-secondary;
+  border: 1px solid darken($secondary, 10%);
+
+  &:where(:hover, :focus-visible) {
+    background-color: darken($secondary, 10%);
+  }
+}
+
+.form-control,
+.form-select {
+  background-color: $surface-variant;
+  border: 1px solid rgba($on-background, 0.15);
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 0.25rem rgba($primary, 0.25);
+  }
+}
+
+[data-offcanvas-trigger-link] {
+  color: $on-background;
+
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  transition: color 250ms ease-in-out;
+
+  &:where(:hover, :focus-visible) {
+    color: $secondary;
+  }
+}
+
+.text-muted {
+  color: $on-surface-muted !important;
+}
+
 .hero {
   height: calc(100dvh - 56px); /* subtract header height */
+  background: linear-gradient(45deg, $primary-variant 0%, $primary 100%);
+  color: $on-primary;
+
+  .text-secondary-txt {
+    color: rgba($on-primary, 0.7) !important;
+  }
+}
+
+.accordion-item {
+  background-color: $surface-variant;
+
+  .accordion-button {
+    background-color: $surface-variant;
+    color: $on-background;
+
+    &:not(.collapsed) {
+      background-color: rgba($secondary, 0.1);
+      color: $secondary;
+    }
+  }
 }
 
 .section {
   padding-block: 60px;
 }
 
-// Form validation styles
+footer {
+  background: linear-gradient(45deg, $primary-variant 0%, $primary 100%);
+  color: $on-primary;
+}
+
+// Custom form validation styles
 .invalid-feedback {
   display: none;
   color: $danger;

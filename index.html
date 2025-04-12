@@ -25,7 +25,7 @@
     <title>Ninja Monk | Welcome</title>
   </head>
 
-  <body class="text-primary-txt">
+  <body class="text-on-dark">
     <!-- Header -->
     <header class="shadow sticky-top">
       <!-- Nav menu -->
@@ -98,9 +98,7 @@
             <h1>
               <span class="display-2" style="display: block">Meh...</span>
 
-              <span
-                class="display-5 text-secondary-txt"
-                style="text-transform: capitalize"
+              <span class="display-5" style="text-transform: capitalize"
                 >Your coding skills!</span
               >
             </h1>
@@ -115,11 +113,13 @@
             <a
               href="#sidebar"
               role="button"
-              class="d-block mt-3"
+              class="mt-3"
               data-bs-toggle="offcanvas"
+              data-offcanvas-trigger-link
               aria-controls="sidebar"
             >
-              Explore our other books
+              <span>Explore our other books</span>
+              <i class="bi bi-arrow-right" aria-hidden="true"></i>
             </a>
           </div>
 
@@ -142,19 +142,19 @@
     </section>
 
     <!-- Pricing plans -->
-    <article id="pricing" class="section bg-secondary-bg">
+    <article id="pricing" class="section bg-background">
       <div class="container-lg">
         <div class="text-center">
           <h2>Pricing Plans</h2>
 
-          <p class="text-secondary-txt lead">Choose a plan that suits you.</p>
+          <p class="text-on-background lead">Choose a plan that suits you.</p>
         </div>
 
         <!-- Cards -->
         <div class="row justify-content-center align-items-center g-0 my-5">
           <!-- Card 1 -->
           <div class="col-8 col-lg-4 col-xl-3">
-            <section class="card bg-dark border-0 shadow">
+            <section class="card border-0 shadow">
               <div class="card-body text-center py-4">
                 <h4 class="card-title">Starter Edition</h4>
 
@@ -162,7 +162,7 @@
 
                 <p class="display-5 text-primary my-4 fw-bold">&#8377; 999/-</p>
 
-                <p class="card-text text-secondary-txt mx-5 d-none d-lg-block">
+                <p class="card-text text-on-surface mx-5 d-none d-lg-block">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
                   cumque aliquid veritatis incidunt ex dolor.
                 </p>
@@ -176,21 +176,21 @@
 
           <!-- Card 2 -->
           <div class="col-9 col-lg-4">
-            <section class="card bg-dark border-2 border-primary shadow">
-              <div class="card-header text-center text-primary">
+            <section class="card border-2 border-primary shadow">
+              <div class="card-header text-center text-secondary">
                 Most Popular
               </div>
 
               <div class="card-body text-center py-4">
                 <h4 class="card-title">Complete Edition</h4>
 
-                <p class="card-subtitle lead">eBook download & all updates</p>
+                <p class="card-subtitle lead">eBook download, & all updates</p>
 
                 <p class="display-4 text-primary my-4 fw-bold">
                   &#8377; 1599/-
                 </p>
 
-                <p class="card-text text-secondary-txt mx-5 d-none d-lg-block">
+                <p class="card-text text-on-surface mx-5 d-none d-lg-block">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
                   cumque aliquid veritatis incidunt ex dolor.
                 </p>
@@ -204,7 +204,7 @@
 
           <!-- Card 3 -->
           <div class="col-8 col-lg-4 col-xl-3">
-            <section class="card bg-dark border-0 shadow">
+            <section class="card border-0 shadow">
               <div class="card-body text-center py-4">
                 <h4 class="card-title">Ultimate Edition</h4>
 
@@ -214,7 +214,7 @@
                   &#8377; 1999/-
                 </p>
 
-                <p class="card-text text-secondary-txt mx-5 d-none d-lg-block">
+                <p class="card-text text-on-surface mx-5 d-none d-lg-block">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
                   cumque aliquid veritatis incidunt ex dolor.
                 </p>
@@ -230,7 +230,7 @@
     </article>
 
     <!-- Topics at a glance -->
-    <section id="topics" class="section bg-dark">
+    <section id="topics" class="section bg-surface">
       <div class="container-md">
         <div class="text-center">
           <h2>Inside the Book...</h2>
@@ -253,7 +253,7 @@
             <!-- Accordion -->
             <ol role="list" id="chapters" class="accordion">
               <!-- Chapter 1 -->
-              <li class="accordion-item">
+              <li class="accordion-item" data-accordion-item>
                 <h2 id="heading-1" class="accordion-header">
                   <button
                     type="button"
@@ -274,7 +274,7 @@
                   aria-labelledby="heading-1"
                   data-bs-parent="#chapters"
                 >
-                  <div class="accordion-body bg-secondary-bg">
+                  <div class="accordion-body bg-surface text-on-surface">
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Adipisci perferendis ducimus, sint natus nam maxime
@@ -292,7 +292,7 @@
               </li>
 
               <!-- Chapter 2 -->
-              <li class="accordion-item">
+              <li class="accordion-item" data-accordion-item>
                 <h2 id="heading-2" class="accordion-header">
                   <button
                     type="button"
@@ -313,7 +313,7 @@
                   aria-labelledby="heading-2"
                   data-bs-parent="#chapters"
                 >
-                  <div class="accordion-body bg-secondary-bg">
+                  <div class="accordion-body bg-surface text-on-surface">
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Adipisci perferendis ducimus, sint natus nam maxime
@@ -331,7 +331,7 @@
               </li>
 
               <!-- Chapter 3 -->
-              <li class="accordion-item">
+              <li class="accordion-item" data-accordion-item>
                 <h2 id="heading-3" class="accordion-header">
                   <button
                     type="button"
@@ -352,7 +352,7 @@
                   aria-labelledby="heading-3"
                   data-bs-parent="#chapters"
                 >
-                  <div class="accordion-body">
+                  <div class="accordion-body bg-surface text-on-surface">
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Adipisci perferendis ducimus, sint natus nam maxime
@@ -370,7 +370,7 @@
               </li>
 
               <!-- Chapter 4 -->
-              <li class="accordion-item">
+              <li class="accordion-item" data-accordion-item>
                 <h2 id="heading-4" class="accordion-header">
                   <button
                     type="button"
@@ -391,7 +391,7 @@
                   aria-labelledby="heading-4"
                   data-bs-parent="#chapters"
                 >
-                  <div class="accordion-body bg-secondary-bg">
+                  <div class="accordion-body bg-surface text-on-surface">
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Adipisci perferendis ducimus, sint natus nam maxime
@@ -409,7 +409,7 @@
               </li>
 
               <!-- Chapter 5 -->
-              <li class="accordion-item">
+              <li class="accordion-item" data-accordion-item>
                 <h2 id="heading-5" class="accordion-header">
                   <button
                     type="button"
@@ -430,7 +430,7 @@
                   aria-labelledby="heading-5"
                   data-bs-parent="#chapters"
                 >
-                  <div class="accordion-body bg-secondary-bg">
+                  <div class="accordion-body bg-surface text-on-surface">
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Adipisci perferendis ducimus, sint natus nam maxime
@@ -453,11 +453,11 @@
     </section>
 
     <!-- Reviews -->
-    <section id="reviews" class="section bg-secondary-bg">
+    <section id="reviews" class="section bg-background">
       <div class="container-lg">
         <div class="text-center">
           <h2>
-            <i class="bi bi-stars text-alt-purple" aria-hidden="true"></i>
+            <i class="bi bi-stars text-secondary" aria-hidden="true"></i>
 
             <span>Book Reviews</span>
           </h2>
@@ -470,34 +470,21 @@
             <!-- Reviews -->
             <ul class="list-group">
               <!-- Review 1 -->
-              <li class="list-group-item bg-dark py-3">
+              <li class="list-group-item bg-surface py-3">
                 <!-- Stars -->
-                <div class="pb-2">
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
+                <div class="pb-2 text-secondary">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
                 </div>
 
-                <h5 class="mb-1">A must buy for every aspiring web dev...</h5>
+                <h5 class="text-on-surface mb-1">
+                  A must buy for every aspiring web dev...
+                </h5>
 
-                <p class="text-secondary-txt mb-1">
+                <p class="text-muted mb-1">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Itaque culpa aperiam autem aspernatur ipsa accusantium quidem.
                   Eaque, officia dolor. Ad quo libero impedit?
@@ -507,30 +494,20 @@
               </li>
 
               <!-- Review 2 -->
-              <li class="list-group-item bg-dark py-3">
+              <li class="list-group-item bg-surface py-3">
                 <!-- Stars -->
-                <div class="pb-2">
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
+                <div class="pb-2 text-secondary">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
                 </div>
 
-                <h5 class="mb-1">A must buy for every aspiring web dev...</h5>
+                <h5 class="text-on-surface mb-1">
+                  A must buy for every aspiring web dev...
+                </h5>
 
-                <p class="text-secondary-txt mb-1">
+                <p class="text-muted mb-1">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Itaque culpa aperiam autem aspernatur ipsa accusantium quidem.
                   Eaque, officia dolor. Ad quo libero impedit?
@@ -540,34 +517,21 @@
               </li>
 
               <!-- Review 3 -->
-              <li class="list-group-item bg-dark py-3">
+              <li class="list-group-item bg-surface py-3">
                 <!-- Stars -->
-                <div class="pb-2">
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    class="bi bi-star-half text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
+                <div class="pb-2 text-secondary">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-half" aria-hidden="true"></i>
                 </div>
 
-                <h5 class="mb-1">A must buy for every aspiring web dev...</h5>
+                <h5 class="text-on-surface mb-1">
+                  A must buy for every aspiring web dev...
+                </h5>
 
-                <p class="text-secondary-txt mb-1">
+                <p class="text-muted mb-1">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Itaque culpa aperiam autem aspernatur ipsa accusantium quidem.
                   Eaque, officia dolor. Ad quo libero impedit?
@@ -577,34 +541,21 @@
               </li>
 
               <!-- Review 4 -->
-              <li class="list-group-item bg-dark py-3">
+              <li class="list-group-item bg-surface py-3">
                 <!-- Stars -->
-                <div class="pb-2">
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
+                <div class="pb-2 text-secondary">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
                 </div>
 
-                <h5 class="mb-1">A must buy for every aspiring web dev...</h5>
+                <h5 class="text-on-surface mb-1">
+                  A must buy for every aspiring web dev...
+                </h5>
 
-                <p class="text-secondary-txt mb-1">
+                <p class="text-muted mb-1">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Itaque culpa aperiam autem aspernatur ipsa accusantium quidem.
                   Eaque, officia dolor. Ad quo libero impedit?
@@ -614,34 +565,24 @@
               </li>
 
               <!-- Review 5 -->
-              <li class="list-group-item bg-dark py-3">
+              <li class="list-group-item bg-surface py-3">
                 <!-- Stars -->
-                <div class="pb-2">
+                <div class="pb-2 text-secondary">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
                   <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    class="bi bi-star-fill text-alt-purple"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    class="bi bi-star-half text-alt-purple"
+                    class="bi bi-star-half text-secondary"
                     aria-hidden="true"
                   ></i>
                 </div>
 
-                <h5 class="mb-1">A must buy for every aspiring web dev...</h5>
+                <h5 class="text-on-surface mb-1">
+                  A must buy for every aspiring web dev...
+                </h5>
 
-                <p class="text-secondary-txt mb-1">
+                <p class="text-muted mb-1">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Itaque culpa aperiam autem aspernatur ipsa accusantium quidem.
                   Eaque, officia dolor. Ad quo libero impedit?
@@ -656,7 +597,7 @@
     </section>
 
     <!-- Contact form section -->
-    <section id="contact" class="section bg-dark">
+    <section id="contact" class="section bg-surface">
       <div class="container-lg">
         <div class="text-center">
           <h2>Get in Touch</h2>
@@ -669,12 +610,12 @@
         <div class="row justify-content-center">
           <div class="col-lg-6">
             <!-- Form -->
-            <form data-contact-form>
+            <form data-contact-form class="needs-validation" novalidate>
               <!-- Email address -->
               <label for="email" class="form-label">Email Address:</label>
 
               <div class="input-group mb-4">
-                <span class="input-group-text">
+                <span class="input-group-text bg-surface-variant border-0">
                   <i class="bi bi-envelope-at-fill" aria-hidden="true"></i>
                 </span>
 
@@ -682,13 +623,14 @@
                   type="email"
                   id="email"
                   placeholder="mario@example.com"
+                  required
                   class="form-control"
                 />
 
                 <!-- Tooltip -->
                 <span
                   style="border-radius: 0 0.375rem 0.375rem 0"
-                  class="input-group-text"
+                  class="input-group-text bg-surface-variant border-0"
                 >
                   <span
                     data-bs-placement="top"
@@ -696,21 +638,23 @@
                     title="Enter a valid email address"
                   >
                     <i
-                      class="bi bi-question-circle text-secondary-txt"
+                      class="bi bi-question-circle text-secondary"
                       aria-hidden="true"
                     ></i>
                   </span>
                 </span>
 
                 <!-- Invalid feedback -->
-                <p class="invalid-feedback" data-email-feedback></p>
+                <p class="invalid-feedback">
+                  Please enter a valid email address!
+                </p>
               </div>
 
               <!-- Name -->
               <label for="name" class="form-label">Name:</label>
 
               <div class="input-group mb-4">
-                <span class="input-group-text">
+                <span class="input-group-text bg-surface-variant border-0">
                   <i class="bi bi-person-fill" aria-hidden="true"></i>
                 </span>
 
@@ -718,13 +662,14 @@
                   type="text"
                   id="name"
                   placeholder="Mario Doe"
+                  required
                   class="form-control"
                 />
 
                 <!-- Tooltip -->
                 <span
                   style="border-radius: 0 0.375rem 0.375rem 0"
-                  class="input-group-text"
+                  class="input-group-text bg-surface-variant border-0"
                 >
                   <span
                     data-bs-placement="top"
@@ -732,14 +677,14 @@
                     title="Enter your full name"
                   >
                     <i
-                      class="bi bi-question-circle text-secondary-txt"
+                      class="bi bi-question-circle text-secondary"
                       aria-hidden="true"
                     ></i>
                   </span>
                 </span>
 
                 <!-- Invalid feedback -->
-                <p class="invalid-feedback" data-name-feedback></p>
+                <p class="invalid-feedback">Name is required!</p>
               </div>
 
               <!-- Query selection -->
@@ -748,32 +693,43 @@
               >
 
               <div class="input-group mb-4">
-                <span class="input-group-text">
+                <span class="input-group-text bg-surface-variant border-0">
                   <i class="bi bi-patch-question-fill" aria-hidden="true"></i>
                 </span>
 
-                <select id="subject" class="form-select">
-                  <option value="Pricing" selected>Pricing Query</option>
+                <select id="subject" class="form-select" required>
+                  <option value="" selected disabled>Select a query</option>
+                  <option value="Pricing">Pricing Query</option>
                   <option value="Content">Content Query</option>
                   <option value="Other">Other Query</option>
                 </select>
+
+                <!-- Invalid feedback -->
+                <p class="invalid-feedback">Please select a query!</p>
               </div>
 
               <!-- Query text-area -->
-              <div class="form-floating mt-5 mb-4">
+              <div class="form-floating bg-surface-variant mt-5 mb-4">
                 <textarea
                   id="query"
                   style="height: 140px"
+                  required
                   class="form-control"
                 ></textarea>
                 <label for="query">Your Query...</label>
 
                 <!-- Invalid feedback -->
-                <p class="invalid-feedback" data-query-feedback></p>
+                <p class="invalid-feedback">Please enter your query!</p>
               </div>
 
               <div class="text-center mb-4">
-                <button type="submit" class="btn btn-secondary">Submit</button>
+                <button
+                  type="submit"
+                  style="width: 100%"
+                  class="btn btn-secondary"
+                >
+                  Submit
+                </button>
               </div>
             </form>
           </div>
@@ -782,7 +738,7 @@
     </section>
 
     <!-- Modal trigger -->
-    <section class="section bg-secondary-bg">
+    <section class="section bg-background">
       <div class="container">
         <div class="text-center">
           <h2>Stay in the Loop!</h2>
@@ -814,6 +770,21 @@
       </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="bg- text-center text-on-surface py-4">
+      <div class="container">
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt
+          repellendus numquam ab nam quibusdam minima?
+        </p>
+
+        <p class="mb-0">
+          &copy; <span data-copyright-year></span> Ninja Monk. All rights
+          reserved.
+        </p>
+      </div>
+    </footer>
+
     <!-- Modal -->
     <div
       id="register-modal"
@@ -823,8 +794,8 @@
       class="modal fade"
     >
       <section class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
+        <div class="modal-content bg-surface text-on-surface">
+          <div class="modal-header bg-surface-variant">
             <h5 id="modal-title" class="modal-title">
               Sign Up for Latest Updates
             </h5>
@@ -838,7 +809,7 @@
           </div>
 
           <div class="modal-body">
-            <p>
+            <p class="text-muted">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
               cumque repellat repudiandae illo explicabo magni odio sed ratione
               mollitia, fuga laborum iste sit distinctio temporibus voluptatum
@@ -877,7 +848,7 @@
       id="sidebar"
       tabindex="-1"
       aria-labelledby="sidebar-label"
-      class="offcanvas offcanvas-start"
+      class="offcanvas offcanvas-start bg-surface text-on-surface"
     >
       <section id="sidebar-label" class="offcanvas-header">
         <h5>Our Other Books</h5>
@@ -891,7 +862,7 @@
       </section>
 
       <div class="offcanvas-body">
-        <p>
+        <p class="text-muted">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab, saepe
           tempora in doloribus deserunt, illo eos sit deleniti repellendus
           dolores possimus quia consectetur excepturi! Cumque ipsa officiis
@@ -908,7 +879,10 @@
             Choose a book title
           </button>
 
-          <ul class="dropdown-menu" aria-labelledby="books-dropdown">
+          <ul
+            class="dropdown-menu bg-background"
+            aria-labelledby="books-dropdown"
+          >
             <li>
               <a href="#" class="dropdown-item">React Star!</a>
             </li>
