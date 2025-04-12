@@ -12,6 +12,8 @@
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
       crossorigin="anonymous"
     /> -->
+
+    <!-- SCSS generated minified CSS link -->
     <link rel="stylesheet" href="./css/main.min.css" />
 
     <!-- Bootstrap icons CDN link -->
@@ -20,34 +22,21 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
 
-    <style>
-      img,
-      figure,
-      picture,
-      svg {
-        display: block;
-        max-width: 100%;
-        height: auto;
-      }
-
-      .section {
-        padding-block: 60px;
-      }
-    </style>
-
     <title>Ninja Monk | Welcome</title>
   </head>
 
-  <body>
+  <body class="text-primary-txt">
     <!-- Header -->
-    <header>
+    <header class="shadow sticky-top">
       <!-- Nav menu -->
       <nav class="navbar navbar-expand-md navbar-dark">
         <div class="container-xxl">
-          <a href="#hero" class="navbar-brand text-primary">
-            <i class="bi bi-book-half" aria-hidden="true"></i>
+          <a href="#hero" class="navbar-brand text-primary-txt">
+            <i class="bi bi-book-half" aria-label="Ninja Monk — The Book"></i>
 
-            <span class="fw-bold">Ninja Monk &mdash; The Book</span>
+            <span class="fw-bold d-none d-sm-inline"
+              >Ninja Monk &mdash; The Book</span
+            >
           </a>
 
           <!-- Nav links -->
@@ -57,19 +46,23 @@
           >
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a href="#topics" class="nav-link"> About the Book </a>
+                <a href="#topics" class="nav-link" data-nav-link>
+                  About the Book
+                </a>
               </li>
 
               <li class="nav-item">
-                <a href="#reviews" class="nav-link"> Reviews </a>
+                <a href="#reviews" class="nav-link" data-nav-link> Reviews </a>
               </li>
 
               <li class="nav-item">
-                <a href="#contact" class="nav-link"> Get in Touch </a>
+                <a href="#contact" class="nav-link" data-nav-link>
+                  Get in Touch
+                </a>
               </li>
 
               <li class="nav-item d-md-none">
-                <a href="#pricing" class="nav-link"> Pricing </a>
+                <a href="#pricing" class="nav-link" data-nav-link> Pricing </a>
               </li>
 
               <li class="nav-item d-none d-md-inline ml-3">
@@ -95,21 +88,24 @@
     </header>
 
     <!-- Hero section -->
-    <section id="hero" class="section">
+    <section
+      id="hero"
+      class="hero bg-dark d-flex justify-content-center align-items-center"
+    >
       <div class="container-lg">
         <div class="row justify-content-center align-items-center">
           <div class="col-md-5 text-center text-md-start">
             <h1>
-              <span class="display-2" style="display: block">Black-Belt</span>
+              <span class="display-2" style="display: block">Meh...</span>
 
               <span
-                class="display-5 text-muted-emphasis"
+                class="display-5 text-secondary-txt"
                 style="text-transform: capitalize"
                 >Your coding skills!</span
               >
             </h1>
 
-            <p class="lead text-muted-emphasis my-4">
+            <p class="lead text-secondary-txt my-4">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis
               dolores perspiciatis eligendi dolor libero eum.
             </p>
@@ -146,27 +142,27 @@
     </section>
 
     <!-- Pricing plans -->
-    <article id="pricing" class="section bg-light mt-5">
+    <article id="pricing" class="section bg-secondary-bg">
       <div class="container-lg">
         <div class="text-center">
           <h2>Pricing Plans</h2>
 
-          <p class="text-muted-emphasis lead">Choose a plan that suits you.</p>
+          <p class="text-secondary-txt lead">Choose a plan that suits you.</p>
         </div>
 
+        <!-- Cards -->
         <div class="row justify-content-center align-items-center g-0 my-5">
+          <!-- Card 1 -->
           <div class="col-8 col-lg-4 col-xl-3">
-            <section class="card border-0">
+            <section class="card bg-dark border-0 shadow">
               <div class="card-body text-center py-4">
                 <h4 class="card-title">Starter Edition</h4>
 
                 <p class="card-subtitle lead">eBook download only</p>
 
-                <p class="display-5 text-primary-emphasis my-4 fw-bold">
-                  &#8377; 999/-
-                </p>
+                <p class="display-5 text-primary my-4 fw-bold">&#8377; 999/-</p>
 
-                <p class="card-text text-muted-emphasis mx-5 d-none d-lg-block">
+                <p class="card-text text-secondary-txt mx-5 d-none d-lg-block">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
                   cumque aliquid veritatis incidunt ex dolor.
                 </p>
@@ -178,9 +174,10 @@
             </section>
           </div>
 
+          <!-- Card 2 -->
           <div class="col-9 col-lg-4">
-            <section class="card border-2 border-primary">
-              <div class="card-header text-center text-primary-emphasis">
+            <section class="card bg-dark border-2 border-primary shadow">
+              <div class="card-header text-center text-primary">
                 Most Popular
               </div>
 
@@ -189,11 +186,11 @@
 
                 <p class="card-subtitle lead">eBook download & all updates</p>
 
-                <p class="display-4 text-primary-emphasis my-4 fw-bold">
+                <p class="display-4 text-primary my-4 fw-bold">
                   &#8377; 1599/-
                 </p>
 
-                <p class="card-text text-muted-emphasis mx-5 d-none d-lg-block">
+                <p class="card-text text-secondary-txt mx-5 d-none d-lg-block">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
                   cumque aliquid veritatis incidunt ex dolor.
                 </p>
@@ -205,18 +202,19 @@
             </section>
           </div>
 
+          <!-- Card 3 -->
           <div class="col-8 col-lg-4 col-xl-3">
-            <section class="card border-0">
+            <section class="card bg-dark border-0 shadow">
               <div class="card-body text-center py-4">
                 <h4 class="card-title">Ultimate Edition</h4>
 
                 <p class="card-subtitle lead">download, updates, & extras</p>
 
-                <p class="display-5 text-primary-emphasis my-4 fw-bold">
+                <p class="display-5 text-primary my-4 fw-bold">
                   &#8377; 1999/-
                 </p>
 
-                <p class="card-text text-muted-emphasis mx-5 d-none d-lg-block">
+                <p class="card-text text-secondary-txt mx-5 d-none d-lg-block">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
                   cumque aliquid veritatis incidunt ex dolor.
                 </p>
@@ -232,7 +230,7 @@
     </article>
 
     <!-- Topics at a glance -->
-    <section id="topics" class="section">
+    <section id="topics" class="section bg-dark">
       <div class="container-md">
         <div class="text-center">
           <h2>Inside the Book...</h2>
@@ -240,7 +238,9 @@
           <p>A quick glance at the topics you'll learn</p>
         </div>
 
-        <div class="row justify-content-around align-items-center g-5 my-5">
+        <div
+          class="row justify-content-around align-items-center gy-5 gy-lg-0 gx-lg-5 my-5"
+        >
           <div class="col-6 col-lg-4">
             <img
               src="./assets/kindle.png"
@@ -251,12 +251,7 @@
 
           <div class="col-lg-6">
             <!-- Accordion -->
-            <ol
-              role="list"
-              id="chapters"
-              class="accordion"
-              style="list-style: none"
-            >
+            <ol role="list" id="chapters" class="accordion">
               <!-- Chapter 1 -->
               <li class="accordion-item">
                 <h2 id="heading-1" class="accordion-header">
@@ -279,7 +274,7 @@
                   aria-labelledby="heading-1"
                   data-bs-parent="#chapters"
                 >
-                  <div class="accordion-body">
+                  <div class="accordion-body bg-secondary-bg">
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Adipisci perferendis ducimus, sint natus nam maxime
@@ -318,7 +313,7 @@
                   aria-labelledby="heading-2"
                   data-bs-parent="#chapters"
                 >
-                  <div class="accordion-body">
+                  <div class="accordion-body bg-secondary-bg">
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Adipisci perferendis ducimus, sint natus nam maxime
@@ -396,7 +391,7 @@
                   aria-labelledby="heading-4"
                   data-bs-parent="#chapters"
                 >
-                  <div class="accordion-body">
+                  <div class="accordion-body bg-secondary-bg">
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Adipisci perferendis ducimus, sint natus nam maxime
@@ -435,7 +430,7 @@
                   aria-labelledby="heading-5"
                   data-bs-parent="#chapters"
                 >
-                  <div class="accordion-body">
+                  <div class="accordion-body bg-secondary-bg">
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Adipisci perferendis ducimus, sint natus nam maxime
@@ -458,7 +453,7 @@
     </section>
 
     <!-- Reviews -->
-    <section id="reviews" class="section bg-alt-muted">
+    <section id="reviews" class="section bg-secondary-bg">
       <div class="container-lg">
         <div class="text-center">
           <h2>
@@ -472,8 +467,11 @@
 
         <div class="row justify-content-center my-5">
           <div class="col-lg-8">
+            <!-- Reviews -->
             <ul class="list-group">
-              <li class="list-group-item py-3">
+              <!-- Review 1 -->
+              <li class="list-group-item bg-dark py-3">
+                <!-- Stars -->
                 <div class="pb-2">
                   <i
                     class="bi bi-star-fill text-alt-purple"
@@ -499,7 +497,7 @@
 
                 <h5 class="mb-1">A must buy for every aspiring web dev...</h5>
 
-                <p class="mb-1">
+                <p class="text-secondary-txt mb-1">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Itaque culpa aperiam autem aspernatur ipsa accusantium quidem.
                   Eaque, officia dolor. Ad quo libero impedit?
@@ -508,7 +506,9 @@
                 <small>Review by Mario</small>
               </li>
 
-              <li class="list-group-item py-3">
+              <!-- Review 2 -->
+              <li class="list-group-item bg-dark py-3">
+                <!-- Stars -->
                 <div class="pb-2">
                   <i
                     class="bi bi-star-fill text-alt-purple"
@@ -530,7 +530,7 @@
 
                 <h5 class="mb-1">A must buy for every aspiring web dev...</h5>
 
-                <p class="mb-1">
+                <p class="text-secondary-txt mb-1">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Itaque culpa aperiam autem aspernatur ipsa accusantium quidem.
                   Eaque, officia dolor. Ad quo libero impedit?
@@ -539,7 +539,9 @@
                 <small>Review by Mario</small>
               </li>
 
-              <li class="list-group-item py-3">
+              <!-- Review 3 -->
+              <li class="list-group-item bg-dark py-3">
+                <!-- Stars -->
                 <div class="pb-2">
                   <i
                     class="bi bi-star-fill text-alt-purple"
@@ -565,7 +567,7 @@
 
                 <h5 class="mb-1">A must buy for every aspiring web dev...</h5>
 
-                <p class="mb-1">
+                <p class="text-secondary-txt mb-1">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Itaque culpa aperiam autem aspernatur ipsa accusantium quidem.
                   Eaque, officia dolor. Ad quo libero impedit?
@@ -574,7 +576,9 @@
                 <small>Review by Mario</small>
               </li>
 
-              <li class="list-group-item py-3">
+              <!-- Review 4 -->
+              <li class="list-group-item bg-dark py-3">
+                <!-- Stars -->
                 <div class="pb-2">
                   <i
                     class="bi bi-star-fill text-alt-purple"
@@ -600,7 +604,7 @@
 
                 <h5 class="mb-1">A must buy for every aspiring web dev...</h5>
 
-                <p class="mb-1">
+                <p class="text-secondary-txt mb-1">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Itaque culpa aperiam autem aspernatur ipsa accusantium quidem.
                   Eaque, officia dolor. Ad quo libero impedit?
@@ -609,7 +613,9 @@
                 <small>Review by Mario</small>
               </li>
 
-              <li class="list-group-item py-3">
+              <!-- Review 5 -->
+              <li class="list-group-item bg-dark py-3">
+                <!-- Stars -->
                 <div class="pb-2">
                   <i
                     class="bi bi-star-fill text-alt-purple"
@@ -635,7 +641,7 @@
 
                 <h5 class="mb-1">A must buy for every aspiring web dev...</h5>
 
-                <p class="mb-1">
+                <p class="text-secondary-txt mb-1">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Itaque culpa aperiam autem aspernatur ipsa accusantium quidem.
                   Eaque, officia dolor. Ad quo libero impedit?
@@ -649,8 +655,8 @@
       </div>
     </section>
 
-    <!-- Contact form -->
-    <section id="contact" class="section">
+    <!-- Contact form section -->
+    <section id="contact" class="section bg-dark">
       <div class="container-lg">
         <div class="text-center">
           <h2>Get in Touch</h2>
@@ -662,7 +668,9 @@
 
         <div class="row justify-content-center">
           <div class="col-lg-6">
-            <form>
+            <!-- Form -->
+            <form data-contact-form>
+              <!-- Email address -->
               <label for="email" class="form-label">Email Address:</label>
 
               <div class="input-group mb-4">
@@ -677,20 +685,28 @@
                   class="form-control"
                 />
 
-                <span class="input-group-text">
+                <!-- Tooltip -->
+                <span
+                  style="border-radius: 0 0.375rem 0.375rem 0"
+                  class="input-group-text"
+                >
                   <span
                     data-bs-placement="top"
                     data-custom-tooltip
                     title="Enter a valid email address"
                   >
                     <i
-                      class="bi bi-question-circle text-muted-emphasis"
+                      class="bi bi-question-circle text-secondary-txt"
                       aria-hidden="true"
                     ></i>
                   </span>
                 </span>
+
+                <!-- Invalid feedback -->
+                <p class="invalid-feedback" data-email-feedback></p>
               </div>
 
+              <!-- Name -->
               <label for="name" class="form-label">Name:</label>
 
               <div class="input-group mb-4">
@@ -705,20 +721,28 @@
                   class="form-control"
                 />
 
-                <span class="input-group-text">
+                <!-- Tooltip -->
+                <span
+                  style="border-radius: 0 0.375rem 0.375rem 0"
+                  class="input-group-text"
+                >
                   <span
                     data-bs-placement="top"
                     data-custom-tooltip
                     title="Enter your full name"
                   >
                     <i
-                      class="bi bi-question-circle text-muted-emphasis"
+                      class="bi bi-question-circle text-secondary-txt"
                       aria-hidden="true"
                     ></i>
                   </span>
                 </span>
+
+                <!-- Invalid feedback -->
+                <p class="invalid-feedback" data-name-feedback></p>
               </div>
 
+              <!-- Query selection -->
               <label for="subject" class="form-label"
                 >What is your question about?</label
               >
@@ -735,6 +759,7 @@
                 </select>
               </div>
 
+              <!-- Query text-area -->
               <div class="form-floating mt-5 mb-4">
                 <textarea
                   id="query"
@@ -742,6 +767,9 @@
                   class="form-control"
                 ></textarea>
                 <label for="query">Your Query...</label>
+
+                <!-- Invalid feedback -->
+                <p class="invalid-feedback" data-query-feedback></p>
               </div>
 
               <div class="text-center mb-4">
@@ -754,7 +782,7 @@
     </section>
 
     <!-- Modal trigger -->
-    <section class="section bg-light">
+    <section class="section bg-secondary-bg">
       <div class="container">
         <div class="text-center">
           <h2>Stay in the Loop!</h2>
@@ -764,7 +792,7 @@
 
         <div class="row justify-content-center">
           <div class="col-md-8 text-center">
-            <p class="text-muted-emphasis my-4">
+            <p class="text-secondary-txt my-4">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
               distinctio error obcaecati optio. Distinctio, esse. Dolor,
               deleniti perspiciatis dolorem rerum nulla fugit aspernatur
@@ -823,13 +851,22 @@
             <input
               type="email"
               id="modal-email"
-              class="form-control"
               placeholder="mario@example.com"
+              class="form-control"
             />
+
+            <!-- Invalid feedback -->
+            <p class="invalid-feedback" data-modal-email-feedback></p>
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Subscribe</button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-newsletter-sub-btn
+            >
+              Subscribe
+            </button>
           </div>
         </div>
       </section>
@@ -895,12 +932,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script>
-      // Initialize all tooltips
-      const tooltipEls = document.querySelectorAll("[data-custom-tooltip]");
-      tooltipEls.forEach((tooltipEl) => {
-        new bootstrap.Tooltip(tooltipEl);
-      });
-    </script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
