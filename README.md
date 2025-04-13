@@ -1,9 +1,16 @@
-# Ninja Monk - The Ultimate Web Development Book 📚
+# Ninja Monk
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/1234abcd-5678-efgh-9101-ijklmnopqrst/deploy-status)](https://app.netlify.com/sites/ninja-monk-book/deploys)
+<div align="center">
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A modern, responsive landing page for the "Ninja Monk" web development book, built with Bootstrap 5 and SCSS.
+</div>
+
+<h2>The Ultimate Web Development Book 📚</h2>
+
+<p>
+A modern, responsive landing page for the "Ninja Monk" web development book, built with Bootstrap 5, JS, and SCSS.
+</p>
 
 ## 🌐 Live Demo
 
