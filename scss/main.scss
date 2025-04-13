@@ -3,24 +3,26 @@
 
 $ff: "Asul", serif !important;
 
-// Custom bootstrap theme colors
-// Material Design Color Palette
-$primary: #009688; // For main CTAs
-$primary-variant: #00796b; // For gradients
-$secondary: rgba(63, 81, 181, 0.16); // Subtle accents
-$secondary-solid: #3f51b5; // Solid version for text
-$success: #4caf50;
-$danger: #f44336;
-$background: #121212;
-$surface: #1e1e1e; // Cards, Modals
-$surface-variant: #2d2d2d; // Accordions, dropdowns
+// Custom theme colors (inspired by "Obsidian Depths" theme color palette)
+$primary: #1abc9c;
+$primary-dark: #16a085;
+$primary-light: lighten($primary, 20%);
 
-// Text Colors
-$on-primary: #ffffff;
-$on-secondary: #000000;
-$on-background: rgba(255, 255, 255, 0.87);
-$on-surface: rgba(255, 255, 255, 0.6);
-$on-surface-muted: rgba(255, 255, 255, 0.38); // Disabled/placeholder text
+$secondary: #2c3e50;
+$secondary-dark: #34495e;
+$secondary-light: lighten($secondary, 10%);
+
+$accent: #ecf0f1;
+
+$background: #34495e;
+$surface: #2c3e50;
+$surface-variant: lighten($surface, 5%);
+
+$text-on-dark: #ecf0f1;
+$text-on-primary: #2c3e50;
+$text-on-secondary: #ecf0f1;
+$text-on-surface: #ecf0f1;
+$text-muted: darken($accent, 15%);
 
 // Bootstrap theme colors must be modified before imports
 // as both functions and variables imports use these values
@@ -30,24 +32,38 @@ $on-surface-muted: rgba(255, 255, 255, 0.38); // Disabled/placeholder text
 
 $custom-theme-colors: (
   "primary": $primary,
-  "primary-variant": $primary-variant,
   "secondary": $secondary,
-  "success": $success,
-  "danger": $danger,
-  "background": $background,
-  "surface": $surface,
-  "surface-variant": $surface-variant,
-  "on-primary": $on-primary,
-  "on-secondary": $on-secondary,
-  "on-background": $on-background,
-  "on-surface": $on-surface,
-  "on-surface-muted": $on-surface-muted,
+  "success": #16a085,
+  "danger": #e74c3c,
+  "warning": #f39c12,
+  "info": #3498db,
+  "light": $accent,
+  "dark": $background,
 );
 
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);
 
 // Bootstrap import must come after theme colors or any other imports are defined
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+// Gradient definitions
+$primary-gradient: linear-gradient(
+  135deg,
+  $primary 0%,
+  darken($primary, 5%) 45%,
+  darken($primary, 10%) 47%,
+  darken($primary, 5%) 49%,
+  $primary 51%
+);
+
+$footer-gradient: linear-gradient(
+  to bottom,
+  $secondary 0%,
+  darken($secondary, 3%) 45%,
+  darken($secondary, 6%) 47%,
+  darken($secondary, 3%) 49%,
+  $secondary 51%
+);
 
 /* 
 ----------------------------------------------------------------
@@ -74,8 +90,6 @@ svg {
 
 // Base styles
 body {
-  background-color: $background;
-  color: $on-background;
   font-family: $ff;
   caret-color: map-get($custom-theme-colors, "primary");
 
@@ -87,7 +101,7 @@ body {
 // Selection styles
 ::selection {
   background-color: $primary;
-  color: map-get($custom-theme-colors, "on-primary");
+  color: $text-on-primary;
 }
 
 // Scrollbar styles for webkit browsers
@@ -104,131 +118,307 @@ body {
   border-radius: 2px;
 }
 
-// Utilities
-header {
-  background-color: rgba($primary, 0.08);
-  backdrop-filter: blur(30px);
+// Background utilities
+.bg-background {
+  background-color: $background !important;
+  color: $text-on-dark;
 }
 
-[data-nav-link] {
-  --bs-nav-link-color: #{map-get($custom-theme-colors, "on-background")};
-  --bs-nav-link-hover-color: #{$secondary};
-
-  color: var(--bs-nav-link-color);
-  transition: color 250ms ease-in-out;
-
-  &:where(:hover, :focus-visible) {
-    color: var(--bs-nav-link-hover-color);
-  }
+.bg-surface {
+  background-color: $surface !important;
 }
 
-.bg-primary-gradient {
-  background: linear-gradient(135deg, $primary 0%, $primary-variant 100%);
+.bg-surface-variant {
+  background-color: $surface-variant !important;
 }
 
-.footer-gradient {
-  background: linear-gradient(45deg, $primary-variant 0%, $primary 100%);
+// Text Utilities
+.text-on-dark {
+  color: $text-on-dark !important;
 }
 
-.text-gradient {
-  background: linear-gradient(45deg, $primary 30%, $secondary-solid 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
+.text-on-surface {
+  color: $text-on-surface !important;
 }
 
-.card {
-  background-color: $surface-variant;
-  border: 1px solid rgba($on-background, 0.12);
-
-  .card-header {
-    background: linear-gradient(90deg, $primary 0%, rgba($primary, 0.8) 100%);
-    color: $on-primary;
-    border-bottom: none;
-  }
+.text-on-primary {
+  color: $text-on-primary !important;
 }
 
-.btn-secondary {
-  background-color: $secondary;
-  border-color: rgba($secondary-solid, 0.3);
-  color: $secondary-solid;
-
-  &:where(:hover, :focus-visible) {
-    background-color: rgba($secondary-solid, 0.1);
-  }
+.text-primary-dark {
+  color: $primary-dark;
 }
 
-.btn-secondary {
-  background-color: $secondary;
-  color: $on-secondary;
-  border: 1px solid darken($secondary, 10%);
-
-  &:where(:hover, :focus-visible) {
-    background-color: darken($secondary, 10%);
-  }
+.text-primary {
+  color: $primary !important;
 }
 
-.form-control,
-.form-select {
-  background-color: $surface-variant;
-  border: 1px solid rgba($on-background, 0.15);
-
-  &:focus {
-    border-color: $primary;
-    box-shadow: 0 0 0 0.25rem rgba($primary, 0.25);
-  }
+.text-secondary {
+  color: $secondary !important;
 }
 
-[data-offcanvas-trigger-link] {
-  color: $on-background;
-
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-
-  transition: color 250ms ease-in-out;
-
-  &:where(:hover, :focus-visible) {
-    color: $secondary;
-  }
+.text-accent {
+  color: $accent !important;
 }
 
-.text-muted {
-  color: $on-surface-muted !important;
-}
-
-.hero {
-  height: calc(100dvh - 56px); /* subtract header height */
-  background: linear-gradient(45deg, $primary-variant 0%, $primary 100%);
-  color: $on-primary;
-
-  .text-secondary-txt {
-    color: rgba($on-primary, 0.7) !important;
-  }
-}
-
-.accordion-item {
-  background-color: $surface-variant;
-
-  .accordion-button {
-    background-color: $surface-variant;
-    color: $on-background;
-
-    &:not(.collapsed) {
-      background-color: rgba($secondary, 0.1);
-      color: $secondary;
-    }
-  }
-}
-
+// Other utils
 .section {
   padding-block: 60px;
 }
 
-footer {
-  background: linear-gradient(45deg, $primary-variant 0%, $primary 100%);
-  color: $on-primary;
+a[data-offcanvas-trigger-link] {
+  width: max-content;
+  color: $accent;
+
+  transition: color 250ms ease;
+
+  &:hover,
+  &:focus-visible {
+    color: $secondary;
+  }
+}
+
+.form-floating > label::after {
+  background-color: transparent !important;
+  color: $text-muted !important;
+}
+
+a[data-footer-link] {
+  color: $text-on-surface;
+  transition: color 250ms ease;
+
+  &:hover,
+  &:focus-visible {
+    color: $primary-dark !important;
+  }
+}
+
+// Background gradients
+.primary-gradient {
+  background: $primary-gradient;
+  // ADDED: Subtle paper texture overlay
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%231abc9c' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E"),
+    $primary-gradient;
+}
+
+.footer-gradient {
+  background: $footer-gradient;
+  // ADDED: Subtle paper texture overlay
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232c3e50' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E"),
+    $footer-gradient;
+}
+
+// Text gradients
+.text-gradient {
+  background: linear-gradient(
+    to right,
+    $primary-light 0%,
+    $primary 30%,
+    $primary-dark 60%,
+    transparent 90%
+  );
+  background-size: 350% 100%;
+  background-position: 0 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  // Subtle glow effect
+  text-shadow: 0 0 10px rgba($primary-light, 0.3),
+    0 0 20px rgba($primary-light, 0.2);
+}
+
+.animated-text-gradient {
+  background: linear-gradient(
+    to right,
+    $primary-light 0%,
+    $primary 30%,
+    $primary-dark 60%,
+    transparent 90%
+  );
+  background-size: 350% 100%;
+  background-position: 0 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  // Subtle glow effect
+  text-shadow: 0 0 10px rgba($primary-light, 0.3),
+    0 0 20px rgba($primary-light, 0.2);
+
+  animation: gradient-shift 8s ease infinite;
+}
+
+.text-gradient-on-primary {
+  background: linear-gradient(
+    to right,
+    $text-on-primary 0%,
+    lighten($text-on-primary, 20%) 40%,
+    $text-on-primary 80%
+  );
+  background-size: 350% 100%;
+  background-position: 0 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  // Subtle glow effect
+  text-shadow: 0 0 10px rgba($text-on-primary, 0.4),
+    0 0 20px rgba($text-on-primary, 0.2);
+
+  animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+}
+
+// Component tweaks
+.nav-link {
+  color: $accent;
+
+  transition: color 250ms ease;
+
+  &:hover,
+  &:focus-visible {
+    color: $primary-dark;
+  }
+}
+
+.card {
+  background-color: $surface;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  &.border-primary {
+    border: 2px solid $primary !important;
+  }
+}
+
+.accordion-item {
+  background-color: $surface;
+  border-color: rgba($primary, 0.2);
+  margin-bottom: 0.5rem;
+
+  .accordion-body {
+    color: $text-muted !important;
+  }
+}
+
+.accordion-button {
+  background-color: $surface-variant !important;
+  color: $text-on-surface !important;
+
+  &:not(.collapsed) {
+    background-color: rgba($primary, 0.2);
+    color: $text-on-surface;
+  }
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid rgba($primary, 0.3) !important;
+}
+
+.dropdown-toggle {
+  background-color: $secondary !important;
+  border-color: rgba($primary, 0.3) !important;
+
+  transition: background-color 250ms ease;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $background !important;
+  }
+}
+
+.dropdown-menu {
+  background-color: $secondary !important;
+  border-color: rgba($primary, 0.3) !important;
+}
+
+.dropdown-item {
+  transition: background-color 250ms ease, color 250ms ease;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $primary !important;
+    color: $text-on-primary !important;
+  }
+}
+
+// Form controls
+.form-control,
+.form-select {
+  background-color: $surface-variant;
+  border-color: rgba($primary, 0.3);
+  color: $text-on-surface;
+
+  &:focus {
+    background-color: $surface-variant;
+    border-color: $primary;
+    color: $text-on-surface;
+    box-shadow: 0 0 0 0.25rem rgba($primary, 0.25);
+  }
+
+  &::placeholder {
+    color: $text-muted;
+  }
+}
+
+// Button tweaks
+.btn-primary {
+  background-color: $primary;
+  color: $text-on-primary;
+  border-color: $primary;
+
+  &:hover,
+  &:focus {
+    background-color: $primary-dark;
+    color: $text-on-primary;
+    border-color: $primary-dark;
+  }
+}
+
+.btn-secondary {
+  background-color: $secondary;
+  color: $text-on-secondary;
+  border-color: $secondary;
+
+  &:hover,
+  &:focus {
+    background-color: $secondary-dark;
+    border-color: $secondary-dark;
+    color: $text-on-secondary;
+  }
+}
+
+.btn-outline-primary {
+  color: $primary;
+  border-color: $primary;
+
+  &:hover,
+  &:focus {
+    background-color: $primary;
+    color: $text-on-primary;
+  }
+}
+
+// Section styles
+header {
+  background-color: rgba($background, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hero {
+  height: calc(100dvh - 56px); /* subtract header height */
 }
 
 // Custom form validation styles

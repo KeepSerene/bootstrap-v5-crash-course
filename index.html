@@ -3,7 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO meta tags -->
     <meta name="author" content="Dhrubajyoti Bhattacharjee" />
+    <meta
+      name="description"
+      content="Ninja Monk - The ultimate guide for aspiring web developers. Learn UI/UX, HTML, CSS, JavaScript and full stack development."
+    />
+    <meta
+      name="keywords"
+      content="web development, programming book, UI/UX, full stack development, JavaScript, HTML, CSS, Firebase, authentication"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ninja-monk-book.netlify.app/" />
+    <meta
+      property="og:title"
+      content="Ninja Monk | The Ultimate Web Development Guide"
+    />
+    <meta
+      property="og:description"
+      content="Master web development from UI/UX to full stack with the Ninja Monk book. Perfect for aspiring developers."
+    />
+    <meta
+      property="og:image"
+      content="./screenshots/ninja-monk-desktop-view.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://ninja-monk-book.netlify.app/"
+    />
+    <meta
+      property="twitter:title"
+      content="Ninja Monk | The Ultimate Web Development Guide"
+    />
+    <meta
+      property="twitter:description"
+      content="Master web development from UI/UX to full stack with the Ninja Monk book. Perfect for aspiring developers."
+    />
+    <meta
+      property="twitter:image"
+      content="./screenshots/ninja-monk-desktop-view.png"
+    />
+
+    <!-- Canonical URL -->
+    <meta rel="canonical" href="https://ninja-monk-book.netlify.app/" />
 
     <!-- Bootstrap CSS CDN link -->
     <!-- <link
@@ -31,10 +80,10 @@
       <!-- Nav menu -->
       <nav class="navbar navbar-expand-md navbar-dark">
         <div class="container-xxl">
-          <a href="#hero" class="navbar-brand text-primary-txt">
+          <a href="#hero" class="navbar-brand text-accent">
             <i class="bi bi-book-half" aria-label="Ninja Monk — The Book"></i>
 
-            <span class="fw-bold d-none d-sm-inline"
+            <span class="fw-bold d-none d-sm-inline text-gradient"
               >Ninja Monk &mdash; The Book</span
             >
           </a>
@@ -46,27 +95,23 @@
           >
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a href="#topics" class="nav-link" data-nav-link>
-                  About the Book
-                </a>
+                <a href="#topics" class="nav-link"> About the Book </a>
               </li>
 
               <li class="nav-item">
-                <a href="#reviews" class="nav-link" data-nav-link> Reviews </a>
+                <a href="#reviews" class="nav-link"> Reviews </a>
               </li>
 
               <li class="nav-item">
-                <a href="#contact" class="nav-link" data-nav-link>
-                  Get in Touch
-                </a>
+                <a href="#contact" class="nav-link"> Get in Touch </a>
               </li>
 
               <li class="nav-item d-md-none">
-                <a href="#pricing" class="nav-link" data-nav-link> Pricing </a>
+                <a href="#pricing" class="nav-link"> Pricing </a>
               </li>
 
               <li class="nav-item d-none d-md-inline ml-3">
-                <a href="#pricing" class="btn btn-secondary"> Buy Now </a>
+                <a href="#pricing" class="btn btn-primary"> Buy Now </a>
               </li>
             </ul>
           </div>
@@ -90,20 +135,20 @@
     <!-- Hero section -->
     <section
       id="hero"
-      class="hero bg-dark d-flex justify-content-center align-items-center"
+      class="hero primary-gradient d-flex justify-content-center align-items-center"
     >
       <div class="container-lg">
         <div class="row justify-content-center align-items-center">
           <div class="col-md-5 text-center text-md-start">
             <h1>
-              <span class="display-2" style="display: block">Meh...</span>
-
-              <span class="display-5" style="text-transform: capitalize"
-                >Your coding skills!</span
+              <span class="display-2 d-block text-gradient-on-primary"
+                >Meh...</span
               >
+
+              <span class="display-5 text-on-primary">Your UI/UX Skills!</span>
             </h1>
 
-            <p class="lead text-secondary-txt my-4">
+            <p class="lead text-on-primary my-4">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis
               dolores perspiciatis eligendi dolor libero eum.
             </p>
@@ -113,10 +158,10 @@
             <a
               href="#sidebar"
               role="button"
-              class="mt-3"
               data-bs-toggle="offcanvas"
               data-offcanvas-trigger-link
               aria-controls="sidebar"
+              class="d-block mx-auto mx-md-0 mt-5 mt-md-3"
             >
               <span>Explore our other books</span>
               <i class="bi bi-arrow-right" aria-hidden="true"></i>
@@ -145,7 +190,7 @@
     <article id="pricing" class="section bg-background">
       <div class="container-lg">
         <div class="text-center">
-          <h2>Pricing Plans</h2>
+          <h2 class="text-gradient">Pricing Plans</h2>
 
           <p class="text-on-background lead">Choose a plan that suits you.</p>
         </div>
@@ -162,7 +207,7 @@
 
                 <p class="display-5 text-primary my-4 fw-bold">&#8377; 999/-</p>
 
-                <p class="card-text text-on-surface mx-5 d-none d-lg-block">
+                <p class="card-text text-muted mx-5 d-none d-lg-block">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
                   cumque aliquid veritatis incidunt ex dolor.
                 </p>
@@ -177,7 +222,7 @@
           <!-- Card 2 -->
           <div class="col-9 col-lg-4">
             <section class="card border-2 border-primary shadow">
-              <div class="card-header text-center text-secondary">
+              <div class="card-header text-center animated-text-gradient">
                 Most Popular
               </div>
 
@@ -190,7 +235,7 @@
                   &#8377; 1599/-
                 </p>
 
-                <p class="card-text text-on-surface mx-5 d-none d-lg-block">
+                <p class="card-text text-muted mx-5 d-none d-lg-block">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
                   cumque aliquid veritatis incidunt ex dolor.
                 </p>
@@ -214,7 +259,7 @@
                   &#8377; 1999/-
                 </p>
 
-                <p class="card-text text-on-surface mx-5 d-none d-lg-block">
+                <p class="card-text text-muted mx-5 d-none d-lg-block">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
                   cumque aliquid veritatis incidunt ex dolor.
                 </p>
@@ -233,7 +278,7 @@
     <section id="topics" class="section bg-surface">
       <div class="container-md">
         <div class="text-center">
-          <h2>Inside the Book...</h2>
+          <h2 class="text-gradient">Inside the Book...</h2>
 
           <p>A quick glance at the topics you'll learn</p>
         </div>
@@ -457,9 +502,9 @@
       <div class="container-lg">
         <div class="text-center">
           <h2>
-            <i class="bi bi-stars text-secondary" aria-hidden="true"></i>
+            <i class="bi bi-stars text-primary-dark" aria-hidden="true"></i>
 
-            <span>Book Reviews</span>
+            <span class="text-gradient">Book Reviews</span>
           </h2>
 
           <p class="lead">What the buyers have said about the book...</p>
@@ -472,7 +517,7 @@
               <!-- Review 1 -->
               <li class="list-group-item bg-surface py-3">
                 <!-- Stars -->
-                <div class="pb-2 text-secondary">
+                <div class="pb-2 text-primary-dark">
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
@@ -496,7 +541,7 @@
               <!-- Review 2 -->
               <li class="list-group-item bg-surface py-3">
                 <!-- Stars -->
-                <div class="pb-2 text-secondary">
+                <div class="pb-2 text-primary-dark">
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
@@ -519,7 +564,7 @@
               <!-- Review 3 -->
               <li class="list-group-item bg-surface py-3">
                 <!-- Stars -->
-                <div class="pb-2 text-secondary">
+                <div class="pb-2 text-primary-dark">
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
@@ -543,7 +588,7 @@
               <!-- Review 4 -->
               <li class="list-group-item bg-surface py-3">
                 <!-- Stars -->
-                <div class="pb-2 text-secondary">
+                <div class="pb-2 text-primary-dark">
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
@@ -567,15 +612,12 @@
               <!-- Review 5 -->
               <li class="list-group-item bg-surface py-3">
                 <!-- Stars -->
-                <div class="pb-2 text-secondary">
+                <div class="pb-2 text-primary-dark">
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
                   <i class="bi bi-star-fill" aria-hidden="true"></i>
-                  <i
-                    class="bi bi-star-half text-secondary"
-                    aria-hidden="true"
-                  ></i>
+                  <i class="bi bi-star-half" aria-hidden="true"></i>
                 </div>
 
                 <h5 class="text-on-surface mb-1">
@@ -600,7 +642,7 @@
     <section id="contact" class="section bg-surface">
       <div class="container-lg">
         <div class="text-center">
-          <h2>Get in Touch</h2>
+          <h2 class="text-gradient">Get in Touch</h2>
 
           <p class="lead">
             Have questions to ask? Write to me and I'll reply promptly!
@@ -638,7 +680,7 @@
                     title="Enter a valid email address"
                   >
                     <i
-                      class="bi bi-question-circle text-secondary"
+                      class="bi bi-question-circle text-primary"
                       aria-hidden="true"
                     ></i>
                   </span>
@@ -677,7 +719,7 @@
                     title="Enter your full name"
                   >
                     <i
-                      class="bi bi-question-circle text-secondary"
+                      class="bi bi-question-circle text-primary"
                       aria-hidden="true"
                     ></i>
                   </span>
@@ -726,7 +768,7 @@
                 <button
                   type="submit"
                   style="width: 100%"
-                  class="btn btn-secondary"
+                  class="btn btn-primary"
                 >
                   Submit
                 </button>
@@ -741,14 +783,14 @@
     <section class="section bg-background">
       <div class="container">
         <div class="text-center">
-          <h2>Stay in the Loop!</h2>
+          <h2 class="text-gradient">Stay in the Loop!</h2>
 
           <p class="lead">Get latest updates as they happen...</p>
         </div>
 
         <div class="row justify-content-center">
           <div class="col-md-8 text-center">
-            <p class="text-secondary-txt my-4">
+            <p class="text-muted my-4">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
               distinctio error obcaecati optio. Distinctio, esse. Dolor,
               deleniti perspiciatis dolorem rerum nulla fugit aspernatur
@@ -771,14 +813,50 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg- text-center text-on-surface py-4">
+    <footer
+      id="footer"
+      class="footer-gradient text-center text-on-primary py-4"
+    >
       <div class="container">
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt
-          repellendus numquam ab nam quibusdam minima?
-        </p>
+        <div class="row g-4">
+          <section class="col-md-6">
+            <h5 class="text-gradient">Quick Links</h5>
 
-        <p class="mb-0">
+            <ul class="list-unstyled">
+              <li>
+                <a href="#footer" data-footer-link>About Us</a>
+              </li>
+
+              <li>
+                <a href="#footer" data-footer-link>FAQ</a>
+              </li>
+
+              <li>
+                <a href="#footer" data-footer-link>Shipping Policy</a>
+              </li>
+            </ul>
+          </section>
+
+          <section class="col-md-6">
+            <h5 class="text-gradient">Resources</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#footer" data-footer-link>Blog</a>
+              </li>
+
+              <li>
+                <a href="#footer" data-footer-link>Developers</a>
+              </li>
+
+              <li>
+                <a href="#footer" data-footer-link>Support</a>
+              </li>
+            </ul>
+          </section>
+        </div>
+
+        <p class="text-on-surface mt-4 mb-0">
           &copy; <span data-copyright-year></span> Ninja Monk. All rights
           reserved.
         </p>
@@ -796,8 +874,8 @@
       <section class="modal-dialog">
         <div class="modal-content bg-surface text-on-surface">
           <div class="modal-header bg-surface-variant">
-            <h5 id="modal-title" class="modal-title">
-              Sign Up for Latest Updates
+            <h5 id="modal-title" class="modal-title text-gradient">
+              Subscribe to our Newsletter
             </h5>
 
             <button
@@ -851,7 +929,7 @@
       class="offcanvas offcanvas-start bg-surface text-on-surface"
     >
       <section id="sidebar-label" class="offcanvas-header">
-        <h5>Our Other Books</h5>
+        <h5 class="text-gradient">Our Other Books</h5>
 
         <button
           type="button"
@@ -880,7 +958,7 @@
           </button>
 
           <ul
-            class="dropdown-menu bg-background"
+            class="dropdown-menu bg-surface-variant"
             aria-labelledby="books-dropdown"
           >
             <li>

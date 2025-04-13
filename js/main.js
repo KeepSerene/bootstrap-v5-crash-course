@@ -63,7 +63,7 @@ function validateNewsletterSub() {
     showErrMsg(
       newsletterEmailInputEl,
       emailFeedbackEl,
-      "Please enter your email!"
+      "Please enter your email address!"
     );
   }
 
