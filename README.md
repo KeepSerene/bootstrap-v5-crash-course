@@ -6,7 +6,7 @@
 
 </div>
 
-<h2>The Ultimate Web Development Book 📚</h2>
+<h2 align="center">The Ultimate Web Development Book 📚</h2>
 
 <p>
 A modern, responsive landing page for the "Ninja Monk" web development book, built with Bootstrap 5, JS, and SCSS.
